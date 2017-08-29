@@ -1,0 +1,8 @@
+{
+    "type": "Rifleman",
+    "strength": 10,
+    "range": 20,
+    "accuracy": 50,
+    "speed": 0,
+    "cost": 5
+}
