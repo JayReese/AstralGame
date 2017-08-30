@@ -5,5 +5,4 @@ using UnityEngine;
 public class Enemy : Unit
 {
     public string description;
-    public int damage, range, accuracy;
 }

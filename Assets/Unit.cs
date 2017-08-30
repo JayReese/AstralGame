@@ -6,6 +6,6 @@ using UnityEngine;
 public class Unit
 {
     public string type;
-    public int speed;
-    
+    public int speed, hp, strength, range, accuracy, cost;
+    public Unit target;
 }

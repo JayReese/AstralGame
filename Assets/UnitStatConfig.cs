@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RiflemanUnit : CombatUnit
+public class UnitStatConfig
 {
-    
+    //string 
 }

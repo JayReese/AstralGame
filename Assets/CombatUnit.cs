@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class CombatUnit : Unit
 {
-    public int damage, range, accuracy, cost;
+    
 }

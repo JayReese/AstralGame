@@ -4,5 +4,6 @@
     "range": 20,
     "accuracy": 50,
     "speed": 0,
-    "cost": 5
+    "cost": 5,
+	"hp": 30
 }
