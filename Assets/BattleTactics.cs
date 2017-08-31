@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllyUnit : Unit
+public class BattleTactics
 {
-    public AllyUnit()
+    public BattleTactics(CombatStats statConfig)
     {
-        //distanceFromCenter = 20;
+
     }
 }

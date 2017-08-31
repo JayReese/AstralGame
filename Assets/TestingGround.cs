@@ -25,7 +25,7 @@ public class TestingGround : MonoBehaviour
 
         TestMakeSpeedOrders();
 
-        StartCoroutine(TestBattlePhase());
+       // StartCoroutine(TestBattlePhase());
 	}
 
     private void TestCreateBattlefieldPieces()
@@ -39,6 +39,7 @@ public class TestingGround : MonoBehaviour
             AllyUnit a = JsonUtility.FromJson<AllyUnit>(File.ReadAllText(Application.streamingAssetsPath + "/JSON/Units/RiflemanUnit.json"));
 
             allyUnits.Add(a);
+            Debug.Log(allyUnits[i].distanceFromCenter);
             allyUnits[i].Allegiance = Unit.Allegiances.Ally;
             allyUnits[i].ChangeName(i);
 
@@ -65,7 +66,7 @@ public class TestingGround : MonoBehaviour
         speedOrder.AddRange(allyUnits);
         speedOrder.AddRange(enemyUnits);
 
-        speedOrder = speedOrder.OrderBy( x => x.speed ).ToList();
+        speedOrder = speedOrder.OrderBy( x => x.CombatStats.BaseSpeed ).ToList();
         speedOrder.Reverse();
         //Debug.Log( speedOrder[0].type );
 
@@ -131,7 +132,7 @@ public class TestingGround : MonoBehaviour
             if (targetToFind.name == targets[i].name)
                 targets.RemoveAt(i);
         }
-    }
+    }   
 
     private bool AttackHit(Unit attacker)
     {

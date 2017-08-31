@@ -3,7 +3,7 @@
   "description": "A test enemy.",
   "strength": 100,
   "range": 20,
-  "accuracy": 20,
+  "accuracy": 50,
   "speed": 2,
-  "hp": 30
+  "hp": 30 
 }
