@@ -2,8 +2,8 @@
     "type": "Rifleman",
     "strength": 10,
     "range": 20,
-    "accuracy": 50,
+    "accuracy": 10,
     "speed": 0,
     "cost": 5,
-	"hp": 30
+	  "hp": 30
 }
