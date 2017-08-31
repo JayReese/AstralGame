@@ -3,30 +3,33 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using UnityEngine;
 
 public class TestingGround : MonoBehaviour
 {
-    CombatUnit testUnit;
-    Enemy enemyA;
+    //CombatUnit testUnit;
+    //Enemy enemyA;
     List<Unit> speedOrder, allyUnits, enemyUnits;
     int targetDist, unitDist;
 
     // Use this for initialization
     void Start ()
     {
-        string jsonstring = File.ReadAllText(Application.streamingAssetsPath + "/JSON/Units/RiflemanUnit.json");
-        testUnit = JsonUtility.FromJson<CombatUnit>(jsonstring);
-        string jsonstring2 = File.ReadAllText(Application.streamingAssetsPath + "/JSON/Enemies/TestEnemy.json");
-        enemyA = JsonUtility.FromJson<Enemy>(jsonstring2);
-        //Debug.Log(testUnit.range);
+        //string jsonstring = File.ReadAllText(Application.streamingAssetsPath + "/JSON/Units/RiflemanUnit.json");
+        //testUnit = JsonUtility.FromJson<CombatUnit>(jsonstring);
+        //string jsonstring2 = File.ReadAllText(Application.streamingAssetsPath + "/JSON/Enemies/TestEnemy.json");
+        //enemyA = JsonUtility.FromJson<Enemy>(jsonstring2);
+        //Debug.Log(testUnit.Tactics.Stats.Accuracy);
         //Debug.Log(enemyA.hp);
         TestCreateBattlefieldPieces();
 
         TestMakeSpeedOrders();
 
-       // StartCoroutine(TestBattlePhase());
-	}
+        //string s = Application.streamingAssetsPath + "/JSON/";
+
+        StartCoroutine(TestBattlePhase());
+    }
 
     private void TestCreateBattlefieldPieces()
     {
@@ -36,17 +39,14 @@ public class TestingGround : MonoBehaviour
 
         for(int i = 0; i < count; i++)
         {
-            AllyUnit a = JsonUtility.FromJson<AllyUnit>(File.ReadAllText(Application.streamingAssetsPath + "/JSON/Units/RiflemanUnit.json"));
+            Rifleman a = new Rifleman();
 
             allyUnits.Add(a);
-            Debug.Log(allyUnits[i].distanceFromCenter);
-            allyUnits[i].Allegiance = Unit.Allegiances.Ally;
             allyUnits[i].ChangeName(i);
 
-            Enemy b = JsonUtility.FromJson<Enemy>(File.ReadAllText(Application.streamingAssetsPath + "/JSON/Enemies/TestEnemy.json"));
+            TestEnemy b = new TestEnemy();
 
             enemyUnits.Add(b);
-            allyUnits[i].Allegiance = Unit.Allegiances.Ally;
             enemyUnits[i].ChangeName(i);
         }
     }
@@ -66,7 +66,7 @@ public class TestingGround : MonoBehaviour
         speedOrder.AddRange(allyUnits);
         speedOrder.AddRange(enemyUnits);
 
-        speedOrder = speedOrder.OrderBy( x => x.CombatStats.BaseSpeed ).ToList();
+        speedOrder = speedOrder.OrderBy( x => x.Tactics.Stats.Speed ).ToList();
         speedOrder.Reverse();
         //Debug.Log( speedOrder[0].type );
 
@@ -92,15 +92,15 @@ public class TestingGround : MonoBehaviour
 
                 if (AttackHit(u))
                 {
-                    u.target.hp = u.target.hp - damageDealt <= 0 ? 0 : u.target.hp - damageDealt;
+                    u.target.Tactics.Status.CurrentHP = u.target.Tactics.Status.CurrentHP - damageDealt <= 0 ? 0 : u.target.Tactics.Status.CurrentHP - damageDealt;
 
-                    Debug.Log(string.Format("{0} attacked {1}. {2} damage dealt!\n{3} at {4} HP.", u.name, u.target.name, damageDealt, u.target.name, u.target.hp));
+                    Debug.Log(string.Format("{0} attacked {1}. {2} damage dealt!\n{3} at {4} HP.", u.name, u.target.name, damageDealt, u.target.name, u.target.Tactics.Status.CurrentHP));
                 }
                 else
                     Debug.Log(u.name + "'s attack missed.");
                 
 
-                if (u.target.hp <= 0)
+                if (u.target.Tactics.Status.CurrentHP <= 0)
                 {
                     Debug.Log(u.target.name + " has been killed! " + targetList.Count + " left.");
                     TestRemoveFromPlay(targetList, u.target);
@@ -119,10 +119,10 @@ public class TestingGround : MonoBehaviour
 
     private int TestCalculatedDamage(Unit attacker)
     {
-        if (targetDist > attacker.range)
-            return attacker.strength / 2;
+        if (targetDist > attacker.Tactics.Stats.Range)
+            return attacker.Tactics.Stats.Strength / 2;
 
-        return attacker.strength;
+        return attacker.Tactics.Stats.Strength;
     }
 
     private void TestRemoveFromPlay(List<Unit> targets, Unit targetToFind)
@@ -138,6 +138,6 @@ public class TestingGround : MonoBehaviour
     {
         int res = UnityEngine.Random.Range(1, 100);
 
-        return res <= attacker.accuracy;
+        return res <= attacker.Tactics.Stats.Accuracy;
     }
 }

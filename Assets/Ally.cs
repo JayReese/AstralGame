@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllyUnit : Unit
+public class Ally : Unit
 {
-    public AllyUnit()
+    public Ally()
     {
-        //distanceFromCenter = 20;
+        Allegiance = Allegiances.Ally;
     }
 }

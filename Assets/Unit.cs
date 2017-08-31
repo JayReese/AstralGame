@@ -5,22 +5,27 @@ using UnityEngine;
 [System.Serializable]
 public class Unit
 {
-    public CombatStatsConfig CombatStats;
+    public BattleTactics Tactics;
+    
 
     public enum Allegiances { Ally, Enemy };
     public string type, name;
-    public Allegiances Allegiance;
-    int speed, hp, strength, range, accuracy, cost,
-               distanceFromCenter;
+    public Allegiances Allegiance { get; protected set; }
+    
     public Unit target;
 
     public Unit()
     {
-        CombatStats = new CombatStatsConfig();
+        type = SetUnitType();
     }
 
     public void ChangeName(int i)
     {
         name = string.Format("{0} {1}", type, i);
+    }
+    
+    protected virtual string SetUnitType()
+    {
+        return string.Empty;
     }
 }

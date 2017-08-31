@@ -16,7 +16,7 @@
     <CompilerResponseFile></CompilerResponseFile>
     <UnityProjectType>Game:1</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
-    <UnityVersion>2017.1.0f3</UnityVersion>
+    <UnityVersion>2017.1.0p4</UnityVersion>
     <RootNamespace></RootNamespace>
     <LangVersion>4</LangVersion>
   </PropertyGroup>
@@ -78,13 +78,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\AllyUnit.cs" />
+    <Compile Include="Assets\Ally.cs" />
     <Compile Include="Assets\BattleTactics.cs" />
-    <Compile Include="Assets\CombatStatsConfig.cs" />
-    <Compile Include="Assets\CombatUnit.cs" />
+    <Compile Include="Assets\CombatStats.cs" />
+    <Compile Include="Assets\CombatStatus.cs" />
     <Compile Include="Assets\Enemy.cs" />
-    <Compile Include="Assets\EnemyUnit.cs" />
-    <Compile Include="Assets\RiflemanUnit.cs" />
+    <Compile Include="Assets\Rifleman.cs" />
+    <Compile Include="Assets\TestEnemy.cs" />
     <Compile Include="Assets\TestingGround.cs" />
     <Compile Include="Assets\Unit.cs" />
   </ItemGroup>

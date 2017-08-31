@@ -1,9 +1,9 @@
 {
   "type": "Test Enemy",
   "description": "A test enemy.",
-  "strength": 100,
-  "range": 20,
-  "accuracy": 50,
-  "speed": 2,
-  "hp": 30 
+  "Strength": 100,
+  "Range": 20,
+  "Accuracy": 50,
+  "Speed": 2,
+  "HP": 30 
 }
