@@ -79,14 +79,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Ally.cs" />
+    <Compile Include="Assets\AllyUnit.cs" />
     <Compile Include="Assets\BattleTactics.cs" />
     <Compile Include="Assets\CombatStats.cs" />
     <Compile Include="Assets\CombatStatus.cs" />
+    <Compile Include="Assets\CombatUnit.cs" />
     <Compile Include="Assets\Enemy.cs" />
+    <Compile Include="Assets\EnemyUnit.cs" />
     <Compile Include="Assets\Rifleman.cs" />
     <Compile Include="Assets\TestEnemy.cs" />
     <Compile Include="Assets\TestingGround.cs" />
     <Compile Include="Assets\Unit.cs" />
+    <Compile Include="Assets\UnitStatConfig.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
