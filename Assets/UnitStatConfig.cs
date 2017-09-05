@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnitStatConfig
+public struct UnitStatConfig
 {
-    //string 
+    public int Strength, Range, Accuracy, Speed, HP;
 }

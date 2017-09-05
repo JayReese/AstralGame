@@ -9,14 +9,15 @@ public class BattleTactics
     public CombatStats Stats;
     public CombatStatus Status;
 
-    public BattleTactics(string s)
+    public BattleTactics(UnitStatConfig newConfig)
     {
-        SetCombatSpread(s);
+        SetCombatSpread(newConfig);
     }
 
-    void SetCombatSpread(string s)
+    void SetCombatSpread(UnitStatConfig appliedConfig)
     {
-        Stats = JsonUtility.FromJson<CombatStats>(File.ReadAllText(Application.streamingAssetsPath + s));
+        //Stats = JsonUtility.FromJson<CombatStats>(File.ReadAllText(Application.streamingAssetsPath + s));
+        Stats = new CombatStats(appliedConfig);
         Status = new CombatStatus(Stats);
     }
 }

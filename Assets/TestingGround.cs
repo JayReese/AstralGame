@@ -12,6 +12,7 @@ public class TestingGround : MonoBehaviour
     //Enemy enemyA;
     List<Unit> speedOrder, allyUnits, enemyUnits;
     int targetDist, unitDist;
+    TestUnitManager testUnitManager; 
 
     // Use this for initialization
     void Start ()
@@ -22,13 +23,23 @@ public class TestingGround : MonoBehaviour
         //enemyA = JsonUtility.FromJson<Enemy>(jsonstring2);
         //Debug.Log(testUnit.Tactics.Stats.Accuracy);
         //Debug.Log(enemyA.hp);
-        TestCreateBattlefieldPieces();
 
-        TestMakeSpeedOrders();
+        //TestCreateBattlefieldPieces();
+        //TestMakeSpeedOrders();
+        TestUnitCreation();
+
+        
 
         //string s = Application.streamingAssetsPath + "/JSON/";
 
         StartCoroutine(TestBattlePhase());
+    }
+
+    private void TestUnitCreation()
+    {
+        testUnitManager = GetComponent<TestUnitManager>();
+
+
     }
 
     private void TestCreateBattlefieldPieces()

@@ -1,9 +1,9 @@
 {
-  "type": "Test Enemy",
-  "description": "A test enemy.",
+  // NAME: Test Enemy
+  // DESC: "A test enemy."
   "Strength": 100,
   "Range": 20,
   "Accuracy": 50,
   "Speed": 2,
-  "HP": 30 
+  "HP": 30
 }

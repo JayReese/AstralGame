@@ -6,7 +6,7 @@ public class Rifleman : Ally
 {
     public Rifleman()
     {
-        Tactics = new BattleTactics("/JSON/Units/RiflemanUnit.json");
+        Tactics = new BattleTactics();
     }
 
     protected override string SetUnitType()

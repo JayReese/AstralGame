@@ -11,6 +11,11 @@ public class CombatStats
     public int Range;
     public int Accuracy;
 
+    public CombatStats(UnitStatConfig config)
+    {
+
+    }
+
     void SetDefaults(int baseSpd, int hp, int baseStr, int baseRange, int baseAcc)
     {
         Speed = baseSpd;
