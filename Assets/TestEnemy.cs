@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class TestEnemy : Enemy
 {
-    public TestEnemy()
+    public TestEnemy(UnitStatConfig stats)
     {
-        Tactics = new BattleTactics("/JSON/Enemies/TestEnemy.json");
+        Tactics = new BattleTactics(stats);
+        //"/JSON/Enemies/TestEnemy.json"
     }
 
     protected override string EnemyDescription()

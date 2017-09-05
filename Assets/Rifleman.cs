@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Rifleman : Ally
 {
-    public Rifleman()
+    public Rifleman(UnitStatConfig config)
     {
-        Tactics = new BattleTactics();
+        Tactics = new BattleTactics(config);
     }
 
     protected override string SetUnitType()

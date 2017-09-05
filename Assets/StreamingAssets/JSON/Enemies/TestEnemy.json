@@ -1,6 +1,4 @@
 {
-  // NAME: Test Enemy
-  // DESC: "A test enemy."
   "Strength": 100,
   "Range": 20,
   "Accuracy": 50,

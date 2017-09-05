@@ -5,23 +5,18 @@ using UnityEngine;
 [System.Serializable]
 public class CombatStats
 {
-    public int HP;
-    public int Speed;
-    public int Strength;
-    public int Range;
-    public int Accuracy;
+    public int HP { get; private set; }
+    public int Speed { get; private set; }
+    public int Strength { get; private set; }
+    public int Range { get; private set; }
+    public int Accuracy { get; private set; }
 
     public CombatStats(UnitStatConfig config)
     {
-
-    }
-
-    void SetDefaults(int baseSpd, int hp, int baseStr, int baseRange, int baseAcc)
-    {
-        Speed = baseSpd;
-        HP = hp;
-        Strength = baseStr;
-        Range = baseRange;
-        Accuracy = baseAcc;
+        Speed = config.Speed;
+        HP = config.HP;
+        Strength = config.Strength;
+        Range = config.Range;
+        Accuracy = config.Accuracy;
     }
 }

@@ -22,6 +22,6 @@ public class TestUnitManager : MonoBehaviour
     {
        // UnitStatConfig config = 
 
-        return JsonUtility.FromJson<UnitStatConfig>(File.ReadAllText(Application.streamingAssetsPath + s));
+        return JsonUtility.FromJson<UnitStatConfig>(File.ReadAllText(Application.streamingAssetsPath + "/JSON/" + s));
     }
 }

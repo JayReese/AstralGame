@@ -2,7 +2,7 @@
 	"type": "Rifleman",
 	"Strength": 10,
 	"Range": 20,
-	"Accuracy": 50,
+	"Accuracy": 20,
 	"Speed": 0,
 	"cost": 5,
 	"HP": 30

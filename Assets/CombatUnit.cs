@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AllyUnit : Unit
+public class CombatUnit : Unit
 {
-    public AllyUnit()
-    {
-        
-    }
+    
 }

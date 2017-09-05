@@ -32,35 +32,37 @@ public class TestingGround : MonoBehaviour
 
         //string s = Application.streamingAssetsPath + "/JSON/";
 
-        StartCoroutine(TestBattlePhase());
+        //StartCoroutine(TestBattlePhase());
     }
 
     private void TestUnitCreation()
     {
         testUnitManager = GetComponent<TestUnitManager>();
 
+        Rifleman rm = new Rifleman(testUnitManager.CreateTestUnits("Units/RiflemanUnit.json"));
 
+        Debug.Log(rm.Tactics.Stats.Accuracy);
     }
 
-    private void TestCreateBattlefieldPieces()
-    {
-        int count = 5;
-        allyUnits = new List<Unit>();
-        enemyUnits = new List<Unit>();
+    //private void TestCreateBattlefieldPieces()
+    //{
+    //    int count = 5;
+    //    allyUnits = new List<Unit>();
+    //    enemyUnits = new List<Unit>();
 
-        for(int i = 0; i < count; i++)
-        {
-            Rifleman a = new Rifleman();
+    //    for(int i = 0; i < count; i++)
+    //    {
+    //        Rifleman a = new Rifleman();
 
-            allyUnits.Add(a);
-            allyUnits[i].ChangeName(i);
+    //        allyUnits.Add(a);
+    //        allyUnits[i].ChangeName(i);
 
-            TestEnemy b = new TestEnemy();
+    //        TestEnemy b = new TestEnemy();
 
-            enemyUnits.Add(b);
-            enemyUnits[i].ChangeName(i);
-        }
-    }
+    //        enemyUnits.Add(b);
+    //        enemyUnits[i].ChangeName(i);
+    //    }
+    //}
 
     // Update is called once per frame
     void Update ()
