@@ -31,7 +31,7 @@ public class TestingGround : MonoBehaviour
         //TestUnitCreation();
 
         testScenario = GetComponent<BattleScenario>();
-        Debug.Log(testScenario.BaseSuccessRate);
+        
 
         //string s = Application.streamingAssetsPath + "/JSON/";
 
