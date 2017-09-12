@@ -78,19 +78,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Ally.cs" />
-    <Compile Include="Assets\BattleTactics.cs" />
-    <Compile Include="Assets\CombatStats.cs" />
-    <Compile Include="Assets\CombatStatus.cs" />
-    <Compile Include="Assets\CombatUnit.cs" />
-    <Compile Include="Assets\Enemy.cs" />
-    <Compile Include="Assets\EnemyUnit.cs" />
-    <Compile Include="Assets\Rifleman.cs" />
+    <Compile Include="Assets\Scripts\Ally.cs" />
+    <Compile Include="Assets\Scripts\BattleTactics.cs" />
+    <Compile Include="Assets\Scripts\CombatStats.cs" />
+    <Compile Include="Assets\Scripts\CombatStatus.cs" />
+    <Compile Include="Assets\Scripts\CombatUnit.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
+    <Compile Include="Assets\Scripts\EnemyUnit.cs" />
+    <Compile Include="Assets\Scripts\Rifleman.cs" />
+    <Compile Include="Assets\Scripts\Unit.cs" />
+    <Compile Include="Assets\Scripts\UnitStatConfig.cs" />
     <Compile Include="Assets\TestEnemy.cs" />
     <Compile Include="Assets\TestingGround.cs" />
     <Compile Include="Assets\TestUnitManager.cs" />
-    <Compile Include="Assets\Unit.cs" />
-    <Compile Include="Assets\UnitStatConfig.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
