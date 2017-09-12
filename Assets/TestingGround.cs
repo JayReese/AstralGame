@@ -12,7 +12,9 @@ public class TestingGround : MonoBehaviour
     //Enemy enemyA;
     List<Unit> speedOrder, allyUnits, enemyUnits;
     int targetDist, unitDist;
-    TestUnitManager testUnitManager; 
+    TestUnitManager testUnitManager;
+    test newTest;
+    BattleScenario testScenario;
 
     // Use this for initialization
     void Start ()
@@ -26,8 +28,9 @@ public class TestingGround : MonoBehaviour
 
         //TestCreateBattlefieldPieces();
         //TestMakeSpeedOrders();
-        TestUnitCreation();
+        //TestUnitCreation();
 
+        testScenario = GetComponent<BattleScenario>();
         
 
         //string s = Application.streamingAssetsPath + "/JSON/";
@@ -42,6 +45,10 @@ public class TestingGround : MonoBehaviour
         Rifleman rm = new Rifleman(testUnitManager.CreateTestUnits("Units/RiflemanUnit.json"));
 
         Debug.Log(rm.Tactics.Stats.Accuracy);
+
+        newTest = GetComponent<test>();
+        Unit newUnit = (Unit)newTest.Create("testmatcher");
+        Debug.Log( newUnit.type );
     }
 
     //private void TestCreateBattlefieldPieces()

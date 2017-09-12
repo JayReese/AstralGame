@@ -79,17 +79,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Ally.cs" />
+    <Compile Include="Assets\Scripts\BattleScenario.cs" />
     <Compile Include="Assets\Scripts\BattleTactics.cs" />
     <Compile Include="Assets\Scripts\CombatStats.cs" />
     <Compile Include="Assets\Scripts\CombatStatus.cs" />
-    <Compile Include="Assets\Scripts\CombatUnit.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\EnemyUnit.cs" />
+    <Compile Include="Assets\Scripts\Globals.cs" />
     <Compile Include="Assets\Scripts\Rifleman.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\UnitStatConfig.cs" />
+    <Compile Include="Assets\test.cs" />
     <Compile Include="Assets\TestEnemy.cs" />
     <Compile Include="Assets\TestingGround.cs" />
+    <Compile Include="Assets\testmatcher.cs" />
     <Compile Include="Assets\TestUnitManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

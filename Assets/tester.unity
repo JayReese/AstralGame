@@ -207,6 +207,8 @@ GameObject:
   - component: {fileID: 12120937}
   - component: {fileID: 12120938}
   - component: {fileID: 12120939}
+  - component: {fileID: 12120940}
+  - component: {fileID: 12120941}
   m_Layer: 0
   m_Name: Testing Ground
   m_TagString: Untagged
@@ -247,5 +249,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efa1b64681984d24996d3a9420e0c4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &12120940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12120936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb79684db3eced24ba62383ef614d2e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &12120941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 12120936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9af788b0490cb54aafdf2c8151d6155, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
