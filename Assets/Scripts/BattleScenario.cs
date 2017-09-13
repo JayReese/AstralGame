@@ -30,18 +30,28 @@ public class BattleScenario : MonoBehaviour
 
         Debug.Log(BaseSuccessRate);
 
+        int allyPoints = 0;
+        int pointsNeeded = 1500;
+
         int allyWins = 0;
 
-        for(int i=0;i<10;i++)
+        for(int i=0;i<20;i++)
         {
-            if (UnityEngine.Random.Range(0, 100) <= BaseSuccessRate)
-                allyWins++;
+            int res = UnityEngine.Random.Range(50, 100);
+
+            allyPoints += res;
+            Debug.Log("Allies got " + res + " points.\nNow have : " + allyPoints);
         }
 
-        if (allyWins >= 10 / 2)
-            Debug.Log("You win. " + allyWins);
+        if (allyPoints >= pointsNeeded)
+            Debug.Log("You win with " + allyPoints);
         else
-            Debug.Log("You suck.");
+            Debug.Log("You lose.");
+
+        //if (allyWins >= 10 / 2)
+        //    Debug.Log("You win. " + allyWins);
+        //else
+        //    Debug.Log("You suck.");
 	}
 	
 	// Update is called once per frame
