@@ -46,6 +46,8 @@ public class BattleScenario : MonoBehaviour
             Debug.Log("You win.");
         else
             Debug.Log("You lose. " + currentPoints + " left.");
+
+
 	}
 	
 	// Update is called once per frame

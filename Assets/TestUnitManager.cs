@@ -20,8 +20,6 @@ public class TestUnitManager : MonoBehaviour
 
     public UnitStatConfig CreateTestUnits(string s)
     {
-       // UnitStatConfig config = 
-
         return JsonUtility.FromJson<UnitStatConfig>(File.ReadAllText(Application.streamingAssetsPath + "/JSON/" + s));
     }
 }

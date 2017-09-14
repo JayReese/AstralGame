@@ -4,5 +4,6 @@ using UnityEngine;
 
 public struct UnitStatConfig
 {
-    public int Strength, Range, Accuracy, Speed, HP;
+    public int Strength, AttackRate;
 }
+

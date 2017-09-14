@@ -10,7 +10,6 @@ public class CombatStatus
     public CombatStatus(CombatStats stats)
     {
         _statsReference = stats;
-        CurrentHP = stats.HP;
         DistanceFromCenter = Random.Range(2, 15);
     }
 }

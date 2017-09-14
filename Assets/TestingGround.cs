@@ -86,7 +86,7 @@ public class TestingGround : MonoBehaviour
         speedOrder.AddRange(allyUnits);
         speedOrder.AddRange(enemyUnits);
 
-        speedOrder = speedOrder.OrderBy( x => x.Tactics.Stats.Speed ).ToList();
+        speedOrder = speedOrder.OrderBy( x => x.Tactics.Stats.AttackRate ).ToList();
         speedOrder.Reverse();
         //Debug.Log( speedOrder[0].type );
 
