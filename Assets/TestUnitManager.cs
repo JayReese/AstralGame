@@ -6,11 +6,13 @@ using UnityEngine;
 public class TestUnitManager : MonoBehaviour
 {
 
+    string baseStreamingAssetsJsonPath;
+
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        baseStreamingAssetsJsonPath = Application.streamingAssetsPath + "/JSON/";
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -27,18 +29,26 @@ public class TestUnitManager : MonoBehaviour
     {
         UnitStatConfig newConfig = new UnitStatConfig();
 
+        #region Variable mapping to new UnitStatConfig.
+        newConfig.Name = unitToMap.name;
+
+        newConfig.Expertise = unitToMap.expertise;
+
         newConfig.AttackRate = unitToMap.Tactics.Stats.AttackRate;
         newConfig.Strength = unitToMap.Tactics.Stats.Strength;
+        #endregion
 
         return newConfig;
     }
 
     public void TestPasstoJSON(UnitStatConfig u)
     {
-
-
         string newJson = JsonUtility.ToJson(u);
 
         Debug.Log(newJson);
+
+
+        // Writes to a new json file, allocating the created file.
+        File.WriteAllText(baseStreamingAssetsJsonPath + "/Testing/" + u.Name.Replace(" ", string.Empty) + ".json", newJson);
     }
 }

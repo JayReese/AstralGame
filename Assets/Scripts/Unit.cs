@@ -10,6 +10,7 @@ public class Unit
 
     public enum Allegiances { Ally, Enemy };
     public string type, name;
+    public int expertise;
     public Allegiances Allegiance { get; protected set; }
     
     public Unit target;

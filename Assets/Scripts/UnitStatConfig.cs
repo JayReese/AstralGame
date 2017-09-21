@@ -4,6 +4,10 @@ using UnityEngine;
 
 public struct UnitStatConfig
 {
+    /// Global attributes.
+    public string Name;
+    public int Expertise;
+
+    /// Combat attributes...
     public int Strength, AttackRate;
 }
-
