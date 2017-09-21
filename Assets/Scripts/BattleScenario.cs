@@ -9,11 +9,20 @@ public class BattleScenario : MonoBehaviour
 
     #region Testing.
     float teamAbility, enemyAbility;
+    TestUnitManager UnitManagement;
     #endregion
 
     // Use this for initialization
     void Start ()
     {
+        UnitManagement = GetComponent<TestUnitManager>();
+
+        Rifleman rif = new Rifleman(UnitManagement.CreateTestUnits("Units/RiflemanUnit.json"));
+
+        UnitManagement.TestPasstoJSON(UnitManagement.TestCreateStatConfigFile(rif));
+
+        //Debug.Log(rif.Tactics.Stats.AttackRate);
+
         teamAbility = 30;
         enemyAbility = 30;
 

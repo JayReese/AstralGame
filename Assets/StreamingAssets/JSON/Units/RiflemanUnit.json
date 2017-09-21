@@ -1,9 +1,4 @@
 {
-	"type": "Rifleman",
-	"Strength": 10,
-	"Range": 20,
-	"Accuracy": 20,
-	"Speed": 0,
-	"cost": 5,
-	"HP": 30
+	"Strength": 5,
+	"AttackRate": 100
 }
