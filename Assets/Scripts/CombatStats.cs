@@ -11,12 +11,9 @@ public class CombatStats
     public int Range { get; private set; }
     public int Accuracy { get; private set; }
 
-
-
     public CombatStats(UnitStatConfig config)
     {
         Strength = config.Strength;
         AttackRate = config.AttackRate;
-        
     }
 }

@@ -47,8 +47,9 @@ public class TestUnitManager : MonoBehaviour
 
         Debug.Log(newJson);
 
-
-        // Writes to a new json file, allocating the created file.
+        // Writes to a json file in the specified folder.
+        // This either creates a new file, or simply
+        // overwrites the file with new information.
         File.WriteAllText(baseStreamingAssetsJsonPath + "/Testing/" + u.Name.Replace(" ", string.Empty) + ".json", newJson);
     }
 }

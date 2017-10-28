@@ -6,7 +6,9 @@ public class Rifleman : Ally
 {
     public Rifleman(UnitStatConfig config)
     {
-        name = "Jack R Johnson";
+        name = config.Name;
+        expertise = config.Expertise;
+
         Tactics = new BattleTactics(config);
     }
 
