@@ -5,19 +5,28 @@ using UnityEngine;
 
 public class BattleScenario : MonoBehaviour
 {
-    [SerializeField] public float BaseSuccessRate { get; private set; }
+    public float BaseSuccessRate { get; private set; }
+
+    #region Testing.
+    float teamAbility, enemyAbility;
+    TestUnitManager UnitManagement;
     List<GameObject> DamageSources;
     int enemyHP, allyHP, numberOfEnemies;
     float timer;
     bool battleHasStarted;
-    #region Testing.
-    float teamAbility, enemyAbility;
-    TestUnitManager UnitManagement;
+    List<int> disabledNumber;
     #endregion
 
     // Use this for initialization
     void Start ()
     {
+        InitializeTestBattleScenario();
+    }
+
+    #region Testing methods.
+    void InitializeTestBattleScenario()
+    {
+
         #region The commented out part of the battle scenario test.
         //UnitManagement = GetComponent<TestUnitManager>();
 
@@ -66,16 +75,38 @@ public class BattleScenario : MonoBehaviour
         DamageSources = new List<GameObject>();
         numberOfEnemies = 8;
         enemyHP = 400 * numberOfEnemies;
+
+        disabledNumber = new List<int>();
+
         timer = 3;
 
-        for (int i = 1; i < 5; i++)
+        for (int i = 1; i < 6; i++)
         {
             o = Instantiate(Resources.Load("Test Unit") as GameObject);
             o.GetComponent<TestingDamageSource>().SetName(i);
             DamageSources.Add(o);
         }
 
-        
+        TestStartDisabledNumberAlloc();
+
+        //disabledNumber.ForEach(x => Debug.Log(x));
+    }
+
+    void TestStartDisabledNumberAlloc()
+    {
+        if (disabledNumber.Count == 0) disabledNumber.Add(UnityEngine.Random.Range(0, 6));
+
+        for (int i = 0; i < 1; i++)
+        {
+            int res = UnityEngine.Random.Range(0, 6);
+            bool exists = false;
+
+            foreach (int a in disabledNumber)
+                exists = a == res;
+
+            if (!exists) disabledNumber.Add(res);
+            else TestStartDisabledNumberAlloc();
+        }
     }
 
     private IEnumerator TestBattleStart()
@@ -92,6 +123,7 @@ public class BattleScenario : MonoBehaviour
         battleHasStarted = true;
         while (enemyHP > 0 && allyHP > 0)
         {
+            #region Ally side.
             for (int i = 0; i < DamageSources.Count; i++)
             {
                 yield return new WaitForSeconds(0.2f);
@@ -125,50 +157,70 @@ public class BattleScenario : MonoBehaviour
                     Debug.Log(DamageSources[i].GetComponent<TestingDamageSource>().Name + "'s Ability is not active. " + DamageSources[i].GetComponent<TestingDamageSource>().Ability.TurnsRemaining + " left.");
                 }
             }
+            #endregion
 
+            #region Enemy side.
             for (int i = 0; i < numberOfEnemies; i++)
             {
                 yield return new WaitForSeconds(0.2f);
-                Debug.Log("enemy is attacking now.");
-                int res;
 
-                res = UnityEngine.Random.Range(0, 100);
-
-                if (res <= 30)
+                bool disabled = false;
+                
+                foreach(int a in disabledNumber)
                 {
-                    Debug.Log("Enemy " + i.ToString() + " hit the enemy.");
-                    allyHP -= 50;
+                    disabled = i == a;
+
+                    if (disabled) break;
+                }
+
+                if(!disabled)
+                {
+                    int res;
+
+                    res = UnityEngine.Random.Range(0, 100);
+
+                    if (res <= 30)
+                    {
+                        Debug.Log("Enemy " + i.ToString() + " hit the enemy.");
+                        allyHP -= 50;
+                    }
+                    else
+                        Debug.Log("Enemy " + i.ToString() + " missed.");
+
+                    res = UnityEngine.Random.Range(0, 100);
+
+                    if (res <= 20)
+                    {
+                        Debug.Log("Ability is used.");
+                        allyHP -= 100;
+                    }
+                    else
+                        Debug.Log("Enemy " + i.ToString() + " missed their ability.");
                 }
                 else
-                    Debug.Log("Enemy " + i.ToString() + " missed.");
-
-                res = UnityEngine.Random.Range(0, 100);
-
-                if (res <= 20)
                 {
-                    Debug.Log("Ability is used.");
-                    allyHP -= 100;
+                    Debug.Log("Enemy " + i + " disabled.");
                 }
-                else
-                    Debug.Log("Enemy " + i.ToString() + " missed their ability.");
             }
+            #endregion
         }
 
-        string winner = enemyHP < 0 ? "Enemy lost." : "Allies lost.";
+        string winner = enemyHP <= 0 ? "Enemy lost." : "Allies lost.";
 
         Debug.Log("Test end. " + winner);
         Debug.Log("Enemies: " + enemyHP + "\nAllies: " + allyHP);
     }
+    #endregion
 
     // Update is called once per frame
     void Update ()
     {
+        #region testing
         if(!battleHasStarted)
             timer -= Time.deltaTime * 1f;
         
         if(timer <= 0 && !battleHasStarted)
             StartCoroutine(TestBattleStart());
-	}
-
-    
+        #endregion
+    }
 }

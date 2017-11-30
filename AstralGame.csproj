@@ -78,7 +78,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HSBColor.cs" />
+    <Compile Include="Assets\Characters\Debugging\InhabitantAnalysis.cs" />
+    <Compile Include="Assets\Characters\Entity.cs" />
+    <Compile Include="Assets\Characters\Inhabitant.cs" />
+    <Compile Include="Assets\Characters\InhabitantRole.cs" />
+    <Compile Include="Assets\Characters\InhabitantStatus.cs" />
+    <Compile Include="Assets\Characters\InhabitantValueConfig.cs" />
+    <Compile Include="Assets\Globals.cs" />
+    <Compile Include="Assets\Managers and Handlers\CharacterBuilder.cs" />
+    <Compile Include="Assets\Managers and Handlers\CharacterHandler.cs" />
+    <Compile Include="Assets\Managers and Handlers\JsonHandler.cs" />
+    <Compile Include="Assets\Managers and Handlers\ManagerNexus.cs" />
+    <Compile Include="Assets\Managers and Handlers\WorldBuilder.cs" />
+    <Compile Include="Assets\Managers and Handlers\WorldHandler.cs" />
     <Compile Include="Assets\Scripts\Ally.cs" />
     <Compile Include="Assets\Scripts\BattleScenario.cs" />
     <Compile Include="Assets\Scripts\BattleTactics.cs" />
@@ -86,18 +98,21 @@
     <Compile Include="Assets\Scripts\CombatStats.cs" />
     <Compile Include="Assets\Scripts\CombatStatus.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
-    <Compile Include="Assets\Scripts\Globals.cs" />
     <Compile Include="Assets\Scripts\Rifleman.cs" />
     <Compile Include="Assets\Scripts\Unit.cs" />
     <Compile Include="Assets\Scripts\UnitStatConfig.cs" />
-    <Compile Include="Assets\test.cs" />
-    <Compile Include="Assets\TestAbility.cs" />
-    <Compile Include="Assets\TestEnemy.cs" />
-    <Compile Include="Assets\TestHueChanger.cs" />
-    <Compile Include="Assets\TestingDamageSource.cs" />
-    <Compile Include="Assets\TestingGround.cs" />
-    <Compile Include="Assets\testmatcher.cs" />
-    <Compile Include="Assets\TestUnitManager.cs" />
+    <Compile Include="Assets\Testing\Behaviors\HSBColor.cs" />
+    <Compile Include="Assets\Testing\Behaviors\test.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestAbility.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestEnemy.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestHueChanger.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestingDamageSource.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestingGround.cs" />
+    <Compile Include="Assets\Testing\Behaviors\testmatcher.cs" />
+    <Compile Include="Assets\Testing\Behaviors\TestUnitManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\StreamingAssets\PlainText\AmericanNames.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
