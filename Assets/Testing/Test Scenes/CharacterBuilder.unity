@@ -108,46 +108,6 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &333527454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 333527455}
-  - component: {fileID: 333527456}
-  m_Layer: 0
-  m_Name: File & Database Handling
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &333527455
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333527454}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 596673069}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &333527456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 333527454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc3e37987b98e57458599bc8bfd3d774, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &376679745
 Prefab:
   m_ObjectHideFlags: 0
@@ -190,11 +150,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 05245dfa8f6fd1744a9a9f86e3597568, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &596673069 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4114480764456584, guid: 05245dfa8f6fd1744a9a9f86e3597568,
-    type: 2}
-  m_PrefabInternal: {fileID: 376679745}
 --- !u!1 &760527563
 GameObject:
   m_ObjectHideFlags: 0
